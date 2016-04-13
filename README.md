@@ -1,10 +1,15 @@
 # generator-ng6 
 
 [![NPM version][npm-image]][npm-url]
+
 [![NPM downloads][npm-downloads-image]][npm-url]
+
 [![Build Status][travis-image]][travis-url]
+
 [![Dependency Status][daviddm-image]][daviddm-url]
+
 [![License][license-image]][license-url]
+
 [![Code Style][code-style-image]][code-style-url]
 
 
