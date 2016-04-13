@@ -147,7 +147,17 @@ yo ng6
 ```
 
 
-## License
+## [License](https://github.com/dimpu/generator-ng6/blob/master/LICENSE) 
 
-MIT
-=======
+[npm-image]: https://img.shields.io/npm/v/generator-ng6.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/generator-ng6
+[npm-downloads-image]: https://img.shields.io/npm/dimpu/generator-ng6.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/dimpu/generator-ng6s/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dimpu/generator-ng6
+[daviddm-image]: https://img.shields.io/david/dimpu/generator-ng6.svg?style=flat-square
+[daviddm-url]: https://david-dm.org/dimpu/generator-ng6
+[license-image]: https://img.shields.io/npm/l/generator-ng6.svg?style=flat-square
+[license-url]: https://github.com/dimpu/generator-ng6s/blob/master/LICENSE
+[code-style-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
+[code-style-url]: http://standardjs.com/
+
