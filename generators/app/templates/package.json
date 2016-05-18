@@ -12,7 +12,9 @@
     "build": "npm run build:index && npm run build:browsfy && npm run build:uglify",
     "test": "karma test"
   },
-  "dependencies": {},
+  "babel" : {
+    "presets": ["es2015"]
+  },
   "keywords": [
     "angular",
     "npm",
