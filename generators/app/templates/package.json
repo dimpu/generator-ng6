@@ -23,6 +23,17 @@
     "npm",
     "es6"
   ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "html"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.html$": "<rootDir>/test/utils/htmlLoader.js",
+      "^.+\\.css$": "<rootDir>/node_modules/jest-css-modules"
+    }
+  },
   "author": "Aravind Buddha",
   "license": "ISC",
   "dependencies": {
