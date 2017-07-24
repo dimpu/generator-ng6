@@ -16,8 +16,8 @@ module.exports = class extends Generator {
       var prompts = [{
         type    : 'input',
         name    : 'serviceName',
-        message : 'Enter path (relative to components/)?',
-        default : 'src/app/components'
+        message : 'Enter path (relative to services/)?',
+        default : 'src/app/services'
       }];
 
       this.prompt(prompts).then(props=>{

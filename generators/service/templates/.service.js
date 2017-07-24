@@ -1,16 +1,11 @@
+class <%= camelCase %>Service {
+	this.get<%= pascalCase %>(){
 
-let <%= camelCase %>Service = function(){
-	const <%= name %> = {};
+	}
+	this.set<%= pascalCase %>() {
 
-	let get<%= pascalCase %> = ()=>{
-		return <%= name %>.<%= pascalCase %>;
-	};
+	}
+} 
 
-	let set<%= pascalCase %> = (val)=>{
-		<%= name %>.<%= pascalCase %> = val;
-	};
 
-	return { get<%= pascalCase %>, set<%= pascalCase %> };
-};
-
-export default <%= camelCase %>Factory;
+export default <%= camelCase %>Service;

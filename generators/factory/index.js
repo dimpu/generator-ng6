@@ -1,44 +1,50 @@
-var yeomen= require('yeoman-generator');
-var  path	    = require('path');
-var changeCase = require('change-case');
+const path	     = require('path');
+const changeCase = require('change-case');
+const Generator = require('yeoman-generator');
 
-module.exports = yeomen.NamedBase.extend({
-  constructor: function () {
-    yeomen.NamedBase.apply(this, arguments);
-    this.name = changeCase.paramCase(this.name);
-  },
+
+module.exports = class extends Generator {
+  // constructor
+  constructor(args, opts) {
+    super(args, opts);
+  }
+
   //promt for path
-  promptName:function(){
+  prompting(){
     var done = this.async();
 
       var prompts = [{
         type    : 'input',
-        name    : 'parent',
-        message : 'Enter path ?',
-        default : 'src/app/common/factories'
+        name    : 'factoryName',
+        message : 'Enter path (relative to services/)?',
+        default : 'src/app/services'
       }];
 
-      this.prompt(prompts, function (props) {
-        this.parent = props.parent;
+      this.prompt(prompts).then(props=>{
+        this.factoryName = props.factoryName;
         done();
-      }.bind(this));
-  },
-
-  copy:function(){
-    var files = [
-      '.factory.js',
-    ];
-
-    for(var i=0; i< files.length;i++){
-      this.fs.copyTpl(
-       this.templatePath(files[i]),
-       this.destinationPath(path.join(this.parent,this.name,this.name+files[i] )),
-        {
-          name: this.name,
-          pascalCase: changeCase.pascalCase(this.name),
-          camelCase:changeCase.camelCase(this.name)
-        }
-     );
-    }
+      });
   }
-});
+
+  // write to the dist
+  writing() {
+    const componentsPath = 'src/app/services';
+    var files = [
+      '.service.js',
+      '.service.spec.js'
+    ];
+    
+    files.forEach((file)=>{
+      this.fs.copyTpl(
+        this.templatePath(file),
+        this.destinationPath(path.join(componentsPath, this.factoryName, this.factoryName + file)),
+         {
+            name: this.factoryName,
+            pascalCase: changeCase.pascalCase(this.factoryName),
+            camelCase:changeCase.camelCase(this.factoryName)
+          }
+      );
+    })
+  }
+
+}

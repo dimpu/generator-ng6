@@ -6,10 +6,11 @@
   "scripts": {
     "start": "watchify  src/app/app.js -o dist/app.min.js  -t babelify  -t stringify -t browserify-css --debug -v",
     "serve": "budo src/index.js --serve=app/app.js --live --open -- -t babelify -t browserify-css -t stringify --debug",
-    "build:index":"node server/build.js",
+    "build:index": "node scripts/build.js",
     "build:browsfy": "browserify src/app/app.js -o dist/app.js  -t babelify -t browserify-css -t stringify -t stripify -t  browserify-ngmin",
     "build:uglify": "uglifyjs ./dist/app.js ---compress  -o ./dist/app.min.js",
-    "build": "npm run build:index && npm run build:browsfy && npm run build:uglify",
+    "build:zip": "gzip ./dist/app.min.js > ./dist/app.bundle.js.gz",
+    "build": "npm run build:index && npm run build:browsfy && npm run build:uglify && npm run build:zip",
     "test": "karma test"
   },
   "babel" : {
@@ -36,6 +37,7 @@
     "stringify": "^3.2.0",
     "stripify": "^3.0.0",
     "uglify-js": "^2.6.1",
-    "watchify": "^3.6.1"
+    "watchify": "^3.6.1",
+    "node-useref": "^0.3.15"
   }
 }
