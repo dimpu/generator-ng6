@@ -2,15 +2,9 @@ import controller from './home.controller';
 import template from './home.html';
 import './home.css';
 
-let homeComponent = function(){
-	return {
+let homeComponent = {
 		template,
-		controller,
-		restrict: 'E',
-		controllerAs: 'vm',
-		scope: {},
-		bindToController: true
-	};
+		controller
 };
 
 export default homeComponent;

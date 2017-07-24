@@ -1,0 +1,16 @@
+import template from './<%= name %>.html';
+import controller from './<%= name %>.controller';
+import './<%= name %>.css';
+
+let <%= camelCase %>Directive = function(){
+	return {
+		template,
+		controller,
+		restrict: 'E',
+		controllerAs: 'vm',
+		scope: {},
+		bindToController: true
+	};
+};
+
+export default <%= camelCase %>Directive;

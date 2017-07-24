@@ -1,5 +1,5 @@
 import angular from 'angular';
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 import aboutComponent from './about.component';
 
 let aboutModule = angular.module('about', [
@@ -12,6 +12,6 @@ let aboutModule = angular.module('about', [
 			template: '<about></about>'
 		});
 })
-.directive('about', aboutComponent);
+.component('about', aboutComponent);
 
 export default aboutModule;

@@ -1,5 +1,5 @@
 import angular from 'angular';
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 import homeComponent from './home.component';
 
 let homeModule = angular.module('home', [
@@ -14,6 +14,6 @@ let homeModule = angular.module('home', [
 			template: '<home></home>'
 		});
 })
-.directive('home', homeComponent);
+.component('home', homeComponent);
 
 export default homeModule;

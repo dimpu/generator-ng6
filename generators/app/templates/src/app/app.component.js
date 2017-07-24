@@ -1,11 +1,8 @@
 import template from './app.html';
 import './app.css';
 
-let appComponent = ()=>{
-	return {
-		template, // because we have a variable name template we can use the shorcut here
-		restrict: 'E'
-	};
+let appComponent = {
+		template // because we have a variable name template we can use the shorcut here
 };
 
 export default appComponent;

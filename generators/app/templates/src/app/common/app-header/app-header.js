@@ -1,10 +1,10 @@
 import angular from 'angular';
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 import AppHeaderComponent from './app-header.component';
 
 let appHeaderModule = angular.module('app-header', [
 	'ui.router'
 ])
-.directive('appHeader', AppHeaderComponent);
+.component('appHeader', AppHeaderComponent);
 
 export default appHeaderModule;

@@ -129,6 +129,12 @@ So running `yo ng6:component signup` will create a `signup` component at `client
 Running `yo ng6:component footer` and if you give path as`  ../common` will create a `footer` component at `app/common/footer`.
 
 
+Similerly to generate a directive, we must use the
+
+```bash
+yo ng6:directive directive-name
+```
+
 
 ### Yeoman Generators
 

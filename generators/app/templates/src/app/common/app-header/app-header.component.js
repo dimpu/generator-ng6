@@ -2,15 +2,9 @@ import template from './app-header.html';
 import controller from './app-header.controller';
 import './app-header.css';
 
-let appHeaderComponent = function(){
-	return {
+let appHeaderComponent = {
 		template,
-		controller,
-		restrict: 'E',
-		controllerAs: 'vm',
-		scope: {},
-		bindToController: true
-	};
+		controller
 };
 
 export default appHeaderComponent;

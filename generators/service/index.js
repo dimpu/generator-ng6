@@ -7,7 +7,6 @@ module.exports = class extends Generator {
   // constructor
   constructor(args, opts) {
     super(args, opts);
-    // this.name = changeCase.paramCase(this.name);
   }
 
   //promt for path
@@ -16,36 +15,33 @@ module.exports = class extends Generator {
 
       var prompts = [{
         type    : 'input',
-        name    : 'componentName',
+        name    : 'serviceName',
         message : 'Enter path (relative to components/)?',
         default : 'src/app/components'
       }];
 
       this.prompt(prompts).then(props=>{
-        this.componentName = props.componentName;
-        // this.name = props.name;
+        this.serviceName = props.serviceName;
         done();
       });
   }
 
   // write to the dist
   writing() {
-    const componentsPath = 'src/app/components';
+    const componentsPath = 'src/app/services';
     var files = [
-      '.component.js',
-      '.controller.js',
-      '.css',
-      '.html','.js','.spec.js'
+      '.service.js',
+      '.service.spec.js'
     ];
     
     files.forEach((file)=>{
       this.fs.copyTpl(
         this.templatePath(file),
-        this.destinationPath(path.join(componentsPath, this.componentName, this.componentName + file)),
+        this.destinationPath(path.join(componentsPath, this.serviceName, this.serviceName + file)),
          {
-            name: this.componentName,
-            pascalCase: changeCase.pascalCase(this.componentName),
-            camelCase:changeCase.camelCase(this.componentName)
+            name: this.serviceName,
+            pascalCase: changeCase.pascalCase(this.serviceName),
+            camelCase:changeCase.camelCase(this.serviceName)
           }
       );
     })
